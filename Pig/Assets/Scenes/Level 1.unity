@@ -239,8 +239,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -62.925, y: 1.6}
-  m_SizeDelta: {x: 64.149994, y: 64.149994}
+  m_AnchoredPosition: {x: -62.3, y: -0.0000066757}
+  m_SizeDelta: {x: 52.344193, y: 52.344193}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &20962605
 MonoBehaviour:
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a7c3d3af201e4ba48bccf9b76112c14d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 003536c8395b61843a78b41643a2868f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -371,7 +371,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3755437727752049440, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_Name
-      value: Coin (4)
+      value: Carrot (4)
       objectReference: {fileID: 0}
     - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1080,7 +1080,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3755437727752049440, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_Name
-      value: Coin (1)
+      value: Carrot (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1358,7 +1358,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.5
+  orthographic size: 3.2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1489,8 +1489,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 537836813}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.36, y: -1.51, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: -10.36, y: -1.22, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 1730481126}
   - {fileID: 447071528}
@@ -1547,7 +1547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  jumpHeight: 15
+  jumpHeight: 13
   groundCheck: {fileID: 1730481126}
   main: {fileID: 519420033}
   androidControl: 0
@@ -1897,7 +1897,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3755437727752049440, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_Name
-      value: Coin (2)
+      value: Carrot (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2251,7 +2251,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3755437727752049440, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_Name
-      value: Coin (3)
+      value: Carrot (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3281,7 +3281,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3755437727752049440, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_Name
-      value: Coin
+      value: Carrot
       objectReference: {fileID: 0}
     - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_LocalPosition.x
