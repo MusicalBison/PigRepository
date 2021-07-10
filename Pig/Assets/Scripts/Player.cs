@@ -141,7 +141,10 @@ public class Player : MonoBehaviour
     void Jump()
     {
         if (!androidControl && Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
             rb.AddForce(transform.up * jumpHeight, ForceMode2D.Impulse);
+            //anim.SetInteger("State", 3);
+        }
     }
 
     // Прыжок, который вызывается при нажатии на кнопку на экране
@@ -159,9 +162,9 @@ public class Player : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, 0.2f);
         isGrounded = colliders.Length > 1;
         // Усанавливаем анимацию прыжка
-        if (!isGrounded) // isGrounded == false
+        if (!isGrounded) // isGrounded == false 
         {
-            anim.SetInteger("State", 3);
+            anim.SetInteger("State", 4);
         }
     }
 
