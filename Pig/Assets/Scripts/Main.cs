@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Main : MonoBehaviour
 {
-    public Text coinText;
+    public Text carrotText;
     public Player player;
     public Image[] hearts; // Массив сердечек
     public Sprite is_hp, no_hp;
@@ -19,7 +19,7 @@ public class Main : MonoBehaviour
 
     void Update()
     {
-        coinText.text = player.GetCoins().ToString();
+        carrotText.text = player.GetCarrots().ToString();
 
         if (player.GetHearts() > 0)
         {

@@ -15,13 +15,14 @@ public class Player : MonoBehaviour
     public Main main; // Публичная переменная типа Main
     bool isHit = false; // Вспомогательная переменная, которая равна true, когда Тор краснеет
     bool isGo = false;
-    private int coins = 0; // Монеты
+    private int carrots = 0; // Монеты
     //public bool isFlip = false;
 
     public bool androidControl = false; // Переменная, отвечающая за тип управления (Клавиши/Джойстик)
     public Joystick joustick; // Джойстик
 
     public AudioSource stepSound;
+    public AudioSource[] carrotEatSounds;
 
     void Start() // Этот метод вызывается 1 раз в начале игры
     {
@@ -216,11 +217,14 @@ public class Player : MonoBehaviour
     // Метод, который вызывается, когда наш герой соприкасается с...
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Coin") // ... монетой
+        if (collision.gameObject.tag == "Carrot") // ... монетой
         {
             Destroy(collision.gameObject);
-            coins++;
-            print("Монеты: " + coins);
+            carrots++;
+            int a = Random.Range(0, 2);
+            if (a == 0) carrotEatSounds[0].Play();
+            else carrotEatSounds[1].Play();
+
         }
     }
 
@@ -232,10 +236,10 @@ public class Player : MonoBehaviour
         //if (isFlip) isFlip = false;
     }
 
-    // Охранник, который говорит нам сколько у игрока монет
-    public int GetCoins()
+    // Охранник, который говорит нам сколько у игрока морковок
+    public int GetCarrots()
     {
-        return coins;
+        return carrots;
     }
 
     // Охранник, который говорит нам сколько у игрока жизней

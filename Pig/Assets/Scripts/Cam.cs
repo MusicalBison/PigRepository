@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cam : MonoBehaviour
 {
-    float speed = 4f; // Скорость камеры
+    public float speed = 4f; // Скорость камеры
     public Transform target; // Переменная, отвечающая за позицию Тора
 
     void Start()
