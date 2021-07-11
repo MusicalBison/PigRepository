@@ -12,7 +12,11 @@ GameObject:
   - component: {fileID: 8439186514958417867}
   - component: {fileID: 8439186514958417865}
   - component: {fileID: 8439186514958417864}
+<<<<<<< HEAD
   - component: {fileID: 8560224594363830648}
+=======
+  - component: {fileID: 4253712346368848274}
+>>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
   m_Layer: 0
   m_Name: Thormy bush
   m_TagString: Untagged
@@ -29,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 8439186514958417861}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -116,7 +120,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+<<<<<<< HEAD
 --- !u!70 &8560224594363830648
+=======
+--- !u!70 &4253712346368848274
+>>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,6 +137,11 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
+<<<<<<< HEAD
   m_Offset: {x: 0.028264707, y: -0.98959255}
   m_Size: {x: 4.8656187, y: 3.1408367}
+=======
+  m_Offset: {x: -0.00000010961804, y: -0.9195429}
+  m_Size: {x: 5.120001, y: 3.280942}
+>>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
   m_Direction: 1
