@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Coin
   - Carrot
+  - PuddleOfMud
+  - Leaves
+  - Exit
+  - Barrier
   layers:
   - Default
   - TransparentFX

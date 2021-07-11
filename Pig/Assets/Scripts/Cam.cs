@@ -10,13 +10,12 @@ public class Cam : MonoBehaviour
     void Start()
     {
         // Присваиваем позиции камеры позицию Тора
-        transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
+        transform.position = new Vector3(target.position.x, target.position.y - 2f, transform.position.z);
     }
 
     void Update()
     {
-        Vector3 position = target.position; // Вспомогательная позиция
-        position.z = transform.position.z;
+        Vector3 position = new Vector3(target.position.x, target.position.y - 2f, transform.position.z); // Вспомогательная позиция
         // Плавно перемещаем камеру к Тору
         transform.position = Vector3.Lerp(transform.position, position, speed * Time.deltaTime);
     }

@@ -10,11 +10,30 @@ public class Main : MonoBehaviour
     public Player player;
     public Image[] hearts; // Массив сердечек
     public Sprite is_hp, no_hp;
-    
+
+    public GameObject winPanel, losePanel, enterPanel, barrierPanel;
+
+    public GameObject exit;
+
+    void Start()
+    {
+        Time.timeScale = 0;
+        player.enabled = false;
+    }
+
     // Метод, при вызове которого текущая сцена перезагружается
     public void Lose()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        losePanel.SetActive(true);
+        Time.timeScale = 0;
+        player.enabled = false;
+    }
+
+    public void Win()
+    {
+        winPanel.SetActive(true);
+        Time.timeScale = 0;
+        player.enabled = false;
     }
 
     void Update()
@@ -37,4 +56,36 @@ public class Main : MonoBehaviour
         }
         else hearts[0].sprite = no_hp;
     }
+
+    public void OpenScene(int index)
+    {
+        SceneManager.LoadScene(index);
+    }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Enter()
+    {
+        Time.timeScale = 1;
+        player.enabled = true;
+        enterPanel.SetActive(false);
+    }
+
+    public void Barrier()
+    {
+        Time.timeScale = 0;
+        player.enabled = false;
+        barrierPanel.SetActive(true);
+    }
+
+    public void ToExit()
+    {
+        player.transform.position = new Vector3(exit.transform.position.x, exit.transform.position.y, player.transform.position.z);
+        Time.timeScale = 1;
+        player.enabled = true;
+        barrierPanel.SetActive(false);
+    }    
 }

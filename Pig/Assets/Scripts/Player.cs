@@ -24,6 +24,14 @@ public class Player : MonoBehaviour
     public AudioSource stepSound;
     public AudioSource[] carrotEatSounds;
 
+    public bool isDirt = false;
+    public bool inDirt = false;
+    public bool isLeaves = false;
+    public bool inLeaves = false;
+
+    public bool immobility = false;
+    public bool upsideDown = false;
+
     void Start() // Этот метод вызывается 1 раз в начале игры
     {
         rb = GetComponent<Rigidbody2D>(); // Связываем переменную rb с нашим компонентом Rigidbody2D
@@ -33,80 +41,97 @@ public class Player : MonoBehaviour
 
     void Update() // Этот метод вызывается каждый кадр
     {
+        Leaves();
+        Dirting();
         Jump();
         CheckGround();
-        // Усанавливаем анимацию бездействия и ходьбы
-        if (!androidControl)
+        if  (!immobility)
         {
-            if (Input.GetAxis("Horizontal") == 0 && isGrounded)
+            // Усанавливаем анимацию бездействия и ходьбы
+            if (!androidControl)
             {
-                isGo = false;
-                anim.SetInteger("State", 1);
+                if (Input.GetAxis("Horizontal") == 0 && isGrounded && !immobility)
+                {
+                    if (isLeaves) anim.SetInteger("State", 6);
+                    else if (isDirt) anim.SetInteger("State", 5);
+                    else anim.SetInteger("State", 1);
+                    isGo = false;
+                }
+                else
+                {
+                    if (!isGo)
+                    {
+                        StartCoroutine(Steps());
+                        isGo = true;
+                    }
+
+                    Flip();
+                    if (isGrounded)
+                    {
+                        if (isLeaves) anim.SetInteger("State", 8);
+                        else if (isDirt) anim.SetInteger("State", 7);
+                        else anim.SetInteger("State", 2);
+                    }
+                }
+
+                // Смерть при падении
+                if (transform.position.y < -100f)
+                {
+                    Lose();
+                }
             }
             else
             {
-                if (!isGo)
+                if (joustick.Horizontal <= 0.3f && joustick.Horizontal >= -0.3f && isGrounded)
                 {
-                    StartCoroutine(Steps());
-                    isGo = true;
+                    isGo = false;
+                    if (isLeaves) anim.SetInteger("State", 6);
+                    else if (isDirt) anim.SetInteger("State", 5);
+                    else anim.SetInteger("State", 1);
+                }
+                else
+                {
+                    if (!isGo)
+                    {
+                        StartCoroutine(Steps());
+                        isGo = true;
+                    }
+
+                    Flip();
+                    if (isGrounded)
+                    {
+                        if (isLeaves) anim.SetInteger("State", 8);
+                        else if (isDirt) anim.SetInteger("State", 7);
+                        else anim.SetInteger("State", 2);
+                    }
                 }
 
-                Flip();
-                if (isGrounded)
+                // Смерть при падении
+                if (transform.position.y < -120f)
                 {
-                    anim.SetInteger("State", 2);
+                    Lose();
                 }
-            }
-
-            // Смерть при падении
-            if (transform.position.y < -35f)
-            {
-                Lose();
             }
         }
-        else
-        {
-            if (joustick.Horizontal <= 0.3f && joustick.Horizontal >= -0.3f && isGrounded)
-            {
-                isGo = false;
-                anim.SetInteger("State", 1);
-            }
-            else
-            {
-                if (!isGo)
-                {
-                    StartCoroutine(Steps());
-                    isGo = true;
-                }
-
-                Flip();
-                if (isGrounded)
-                {
-                    anim.SetInteger("State", 2);
-                }
-            }
-
-            // Смерть при падении
-            if (transform.position.y < -35f)
-            {
-                Lose();
-            }
-        }
+        
         
     }
 
     void FixedUpdate() // Этот метод вызывается определённое число раз в секунду
     {
-        if (!androidControl)
-            rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
-        else
+        if (!immobility)
         {
-            if (joustick.Horizontal >= 0.3f)
-                rb.velocity = new Vector2(speed, rb.velocity.y);
-            else if (joustick.Horizontal <= -0.3f)
-                rb.velocity = new Vector2(-speed, rb.velocity.y);
+            if (!androidControl)
+                rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
             else
-                rb.velocity = new Vector2(0, rb.velocity.y);
+            {
+                if (joustick.Horizontal >= 0.3f)
+                    rb.velocity = new Vector2(speed, rb.velocity.y);
+                else if (joustick.Horizontal <= -0.3f)
+                    rb.velocity = new Vector2(-speed, rb.velocity.y);
+                else
+                    rb.velocity = new Vector2(0, rb.velocity.y);
+            }
         }
     }
 
@@ -119,12 +144,12 @@ public class Player : MonoBehaviour
         {
             if (Input.GetAxis("Horizontal") > 0)
             {
-                transform.localRotation = Quaternion.Euler(0, 0, 0);
+                transform.localRotation = Quaternion.Euler(transform.localRotation.x, 0, 0);
             }
 
             if (Input.GetAxis("Horizontal") < 0)
             {
-                transform.localRotation = Quaternion.Euler(0, 180, 0);
+                transform.localRotation = Quaternion.Euler(transform.localRotation.x, 180, 0);
             }
         }
         else // Если управляем джойстиком
@@ -140,7 +165,7 @@ public class Player : MonoBehaviour
     // Метод, отвечающий за прыжок
     void Jump()
     {
-        if (!androidControl && Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (!androidControl && Input.GetKeyDown(KeyCode.Space) && isGrounded && !immobility)
         {
             rb.AddForce(transform.up * jumpHeight, ForceMode2D.Impulse);
             //anim.SetInteger("State", 3);
@@ -150,7 +175,7 @@ public class Player : MonoBehaviour
     // Прыжок, который вызывается при нажатии на кнопку на экране
     public void JumpAndroid()
     {
-        if (isGrounded)
+        if (isGrounded && !immobility)
         {
             rb.AddForce(transform.up * jumpHeight, ForceMode2D.Impulse);
         }
@@ -164,7 +189,9 @@ public class Player : MonoBehaviour
         // Усанавливаем анимацию прыжка
         if (!isGrounded) // isGrounded == false 
         {
-            anim.SetInteger("State", 4);
+            if (isLeaves) anim.SetInteger("State", 10);
+            else if (isDirt) anim.SetInteger("State", 9);
+            else anim.SetInteger("State", 4);
         }
     }
 
@@ -172,7 +199,7 @@ public class Player : MonoBehaviour
     public void RecountHp(int deltaHp)
     {
         curHp = curHp + deltaHp;
-        print("Жизни: " + curHp);
+        //print("Жизни: " + curHp);
 
         if (deltaHp < 0)
         {
@@ -220,14 +247,43 @@ public class Player : MonoBehaviour
     // Метод, который вызывается, когда наш герой соприкасается с...
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Carrot") // ... монетой
+        if (collision.tag == "Carrot") // ... монетой
         {
             Destroy(collision.gameObject);
             carrots++;
             int a = Random.Range(0, 2);
             if (a == 0) carrotEatSounds[0].Play();
             else carrotEatSounds[1].Play();
+        }
 
+        if (collision.tag == "PuddleOfMud")
+        {
+            inDirt = true;
+        }
+        if (collision.tag == "Leaves")
+        {
+            inLeaves = true;
+        }
+        if (collision.tag == "Barrier")
+        {
+            if (carrots < 15) main.Barrier();
+        }
+        if (collision.tag == "Exit")
+        {
+            if (isLeaves) main.Win();
+            else main.Lose();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "PuddleOfMud")
+        {
+            inDirt = false;
+        }
+        if (collision.tag == "Leaves")
+        {
+            inLeaves = false;
         }
     }
 
@@ -250,4 +306,101 @@ public class Player : MonoBehaviour
     {
         return curHp;
     }
+
+    void Dirting()
+    {
+        if (inDirt)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (!upsideDown)
+                {
+                    upsideDown = true;
+                    immobility = true;
+                    //transform.position = new Vector3(collision.transform.position.x, transform.position.y, transform.position.z); // центр грязи
+                    transform.localRotation = Quaternion.Euler(180, transform.localRotation.y, transform.localRotation.z);
+                }
+                else
+                {
+                    upsideDown = false;
+                    immobility = false;
+                    isDirt = true;
+                    transform.position = new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z);
+                    transform.localRotation = Quaternion.Euler(0, transform.localRotation.y, transform.localRotation.z);
+                }
+            }
+        }
+    }
+
+    void Leaves()
+    {
+        if (inLeaves)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (!upsideDown)
+                {
+                    upsideDown = true;
+                    immobility = true;
+                    //transform.position = new Vector3(collision.transform.position.x, transform.position.y, transform.position.z); // центр грязи
+                    transform.localRotation = Quaternion.Euler(180, transform.localRotation.y, transform.localRotation.z);
+                }
+                else
+                {
+                    upsideDown = false;
+                    immobility = false;
+                    if (isDirt) isLeaves = true;
+                    transform.position = new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z);
+                    transform.localRotation = Quaternion.Euler(0, transform.localRotation.y, transform.localRotation.z);
+                }
+            }
+        }
+    }
+
+    public void DirtingLeavesAndroid()
+    {
+        if (inDirt)
+        {
+            if (true)
+            {
+                if (!upsideDown)
+                {
+                    upsideDown = true;
+                    immobility = true;
+                    //transform.position = new Vector3(collision.transform.position.x, transform.position.y, transform.position.z); // центр грязи
+                    transform.localRotation = Quaternion.Euler(180, transform.localRotation.y, transform.localRotation.z);
+                }
+                else
+                {
+                    upsideDown = false;
+                    immobility = false;
+                    isDirt = true;
+                    transform.position = new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z);
+                    transform.localRotation = Quaternion.Euler(0, transform.localRotation.y, transform.localRotation.z);
+                }
+            }
+        }
+
+        if (inLeaves)
+        {
+            if (true)
+            {
+                if (!upsideDown)
+                {
+                    upsideDown = true;
+                    immobility = true;
+                    //transform.position = new Vector3(collision.transform.position.x, transform.position.y, transform.position.z); // центр грязи
+                    transform.localRotation = Quaternion.Euler(180, transform.localRotation.y, transform.localRotation.z);
+                }
+                else
+                {
+                    upsideDown = false;
+                    immobility = false;
+                    if (isDirt) isLeaves = true;
+                    transform.position = new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z);
+                    transform.localRotation = Quaternion.Euler(0, transform.localRotation.y, transform.localRotation.z);
+                }
+            }
+        }
+    }    
 }
