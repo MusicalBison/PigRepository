@@ -17,7 +17,6 @@ AnimatorStateMachine:
     m_Position: {x: 200, y: -110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7648845614174412985}
-<<<<<<< HEAD
     m_Position: {x: 220, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4788311288650813686}
@@ -40,15 +39,11 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -6608115016594615148}
     m_Position: {x: -100, y: 280, z: 0}
-=======
-    m_Position: {x: 270, y: 130, z: 0}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -7586597361613513513}
   - {fileID: -6807125238462311534}
   - {fileID: 6595761151647380514}
-<<<<<<< HEAD
   - {fileID: 5071802214478125419}
   - {fileID: -3717329264816316089}
   - {fileID: -1627655069805955219}
@@ -56,8 +51,6 @@ AnimatorStateMachine:
   - {fileID: 6301877059883188440}
   - {fileID: -8814367326720855756}
   - {fileID: -3596721399043141687}
-=======
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
@@ -167,7 +160,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 0
-<<<<<<< HEAD
 --- !u!1102 &-6608115016594615148
 AnimatorState:
   serializedVersion: 5
@@ -371,9 +363,7 @@ AnimatorState:
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
-  m_TimeParameter: 
-=======
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
+  m_TimeParameter:
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -532,7 +522,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
-<<<<<<< HEAD
 --- !u!1101 &5071802214478125419
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -583,8 +572,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 0
-=======
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
 --- !u!1101 &6595761151647380514
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

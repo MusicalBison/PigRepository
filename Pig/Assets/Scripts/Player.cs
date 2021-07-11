@@ -165,13 +165,11 @@ public class Player : MonoBehaviour
     // Метод, отвечающий за прыжок
     void Jump()
     {
-<<<<<<< HEAD
+
         if (!androidControl && Input.GetKeyDown(KeyCode.Space) && isGrounded && !immobility)
         {
-=======
-        if (!androidControl && Input.GetKeyDown(KeyCode.Space) && isGrounded)
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
             rb.AddForce(transform.up * jumpHeight, ForceMode2D.Impulse);
+        }
     }
 
     // Прыжок, который вызывается при нажатии на кнопку на экране
@@ -188,16 +186,12 @@ public class Player : MonoBehaviour
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, 0.2f);
         isGrounded = colliders.Length > 1;
-        // Усанавливаем анимацию прыжка
+        // Устанавливаем анимацию прыжка
         if (!isGrounded) // isGrounded == false
         {
-<<<<<<< HEAD
             if (isLeaves) anim.SetInteger("State", 10);
             else if (isDirt) anim.SetInteger("State", 9);
             else anim.SetInteger("State", 4);
-=======
-            anim.SetInteger("State", 3);
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
         }
     }
 

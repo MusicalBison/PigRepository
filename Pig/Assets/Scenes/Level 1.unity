@@ -551,16 +551,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-<<<<<<< HEAD
 --- !u!4 &202197436 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8439186514958417866, guid: 874044aff97fdad4fb9c754ab47cba24, type: 3}
   m_PrefabInstance: {fileID: 614210142}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &226932687
-=======
---- !u!1001 &224716153
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -573,7 +569,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
       value: -23.039999
       objectReference: {fileID: 0}
     - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
@@ -637,9 +632,6 @@ PrefabInstance:
     - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -176.64
-=======
-      value: -8
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
       objectReference: {fileID: 0}
     - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -696,19 +688,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8439186514958417866, guid: 874044aff97fdad4fb9c754ab47cba24, type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
       value: 89.6
       objectReference: {fileID: 0}
     - target: {fileID: 8439186514958417866, guid: 874044aff97fdad4fb9c754ab47cba24, type: 3}
       propertyPath: m_LocalPosition.y
       value: -28.671993
-=======
-      value: 4.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 8439186514958417866, guid: 874044aff97fdad4fb9c754ab47cba24, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.9199986
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
       objectReference: {fileID: 0}
     - target: {fileID: 8439186514958417866, guid: 874044aff97fdad4fb9c754ab47cba24, type: 3}
       propertyPath: m_LocalPosition.z
@@ -923,45 +907,25 @@ Tilemap:
   m_GameObject: {fileID: 273645118}
   m_Enabled: 1
   m_Tiles:
-<<<<<<< HEAD
   - first: {x: 5, y: -18, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 7
       m_TileSpriteIndex: 7
-=======
-  - first: {x: -10, y: -3, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 4
-      m_TileSpriteIndex: 4
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: 6, y: -18, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 6
       m_TileSpriteIndex: 6
-=======
-  - first: {x: -9, y: -3, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 4
-      m_TileSpriteIndex: 4
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: 7, y: -18, z: 0}
-=======
-  - first: {x: -8, y: -3, z: 0}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
     second:
       serializedVersion: 2
       m_TileIndex: 4
@@ -970,24 +934,15 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: 8, y: -18, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 8
       m_TileSpriteIndex: 8
-=======
-  - first: {x: -7, y: -3, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 4
-      m_TileSpriteIndex: 4
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: 11, y: -18, z: 0}
     second:
       serializedVersion: 2
@@ -998,9 +953,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
   - first: {x: 12, y: -18, z: 0}
-=======
-  - first: {x: -6, y: -3, z: 0}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
     second:
       serializedVersion: 2
       m_TileIndex: 4
@@ -1009,11 +961,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: 13, y: -18, z: 0}
-=======
-  - first: {x: -5, y: -3, z: 0}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
     second:
       serializedVersion: 2
       m_TileIndex: 4
@@ -1022,24 +970,15 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: 16, y: -18, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 7
       m_TileSpriteIndex: 7
-=======
-  - first: {x: -3, y: -3, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 4
-      m_TileSpriteIndex: 4
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: 17, y: -18, z: 0}
     second:
       serializedVersion: 2
@@ -1050,9 +989,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
   - first: {x: 20, y: -18, z: 0}
-=======
-  - first: {x: -2, y: -3, z: 0}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
     second:
       serializedVersion: 2
       m_TileIndex: 4
@@ -1061,11 +997,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: 21, y: -18, z: 0}
-=======
-  - first: {x: -1, y: -3, z: 0}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
     second:
       serializedVersion: 2
       m_TileIndex: 4
@@ -1074,75 +1006,42 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: 22, y: -18, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 6
       m_TileSpriteIndex: 6
-=======
-  - first: {x: 1, y: -3, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 4
-      m_TileSpriteIndex: 4
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: 23, y: -18, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 6
       m_TileSpriteIndex: 6
-=======
-  - first: {x: 2, y: -3, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 4
-      m_TileSpriteIndex: 4
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: 24, y: -18, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 6
       m_TileSpriteIndex: 6
-=======
-  - first: {x: 3, y: -3, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 4
-      m_TileSpriteIndex: 4
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: 25, y: -18, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 6
       m_TileSpriteIndex: 6
-=======
-  - first: {x: 4, y: -3, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 4
-      m_TileSpriteIndex: 4
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: 26, y: -18, z: 0}
     second:
       serializedVersion: 2
@@ -1189,9 +1088,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
   - first: {x: 4, y: -16, z: 0}
-=======
-  - first: {x: 5, y: -3, z: 0}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
     second:
       serializedVersion: 2
       m_TileIndex: 4
@@ -1200,11 +1096,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: 3, y: -14, z: 0}
-=======
-  - first: {x: 6, y: -3, z: 0}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
     second:
       serializedVersion: 2
       m_TileIndex: 4
@@ -1213,11 +1105,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: 1, y: -13, z: 0}
-=======
-  - first: {x: 7, y: -3, z: 0}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
     second:
       serializedVersion: 2
       m_TileIndex: 5
@@ -1226,11 +1114,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: 5, y: -13, z: 0}
-=======
-  - first: {x: 8, y: -3, z: 0}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
     second:
       serializedVersion: 2
       m_TileIndex: 4
@@ -1239,11 +1123,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: 6, y: -13, z: 0}
-=======
-  - first: {x: 9, y: -3, z: 0}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
     second:
       serializedVersion: 2
       m_TileIndex: 3
@@ -1252,45 +1132,25 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: 7, y: -13, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 8
       m_TileSpriteIndex: 8
-=======
-  - first: {x: 10, y: -3, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 2
-      m_TileSpriteIndex: 2
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: -8, y: -12, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 7
       m_TileSpriteIndex: 7
-=======
-  - first: {x: 11, y: -3, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 2
-      m_TileSpriteIndex: 2
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: -7, y: -12, z: 0}
-=======
-  - first: {x: 12, y: -3, z: 0}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
     second:
       serializedVersion: 2
       m_TileIndex: 2
@@ -1299,11 +1159,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: -6, y: -12, z: 0}
-=======
-  - first: {x: 13, y: -3, z: 0}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
     second:
       serializedVersion: 2
       m_TileIndex: 2
@@ -1312,11 +1168,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: -5, y: -12, z: 0}
-=======
-  - first: {x: 14, y: -3, z: 0}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
     second:
       serializedVersion: 2
       m_TileIndex: 1
@@ -1325,7 +1177,6 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: -4, y: -12, z: 0}
     second:
       serializedVersion: 2
@@ -1390,9 +1241,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
   - first: {x: 8, y: -11, z: 0}
-=======
-  - first: {x: 21, y: -3, z: 0}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
     second:
       serializedVersion: 2
       m_TileIndex: 0
@@ -1401,11 +1249,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: 9, y: -11, z: 0}
-=======
-  - first: {x: 21, y: -2, z: 0}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
     second:
       serializedVersion: 2
       m_TileIndex: 0
@@ -1414,11 +1258,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: 11, y: -10, z: 0}
-=======
-  - first: {x: 21, y: -1, z: 0}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
     second:
       serializedVersion: 2
       m_TileIndex: 0
@@ -1427,7 +1267,6 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
   - first: {x: -13, y: -9, z: 0}
     second:
       serializedVersion: 2
@@ -2007,31 +1846,6 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 6f75d8671585f4843a4b6ff702eb749a, type: 3}
   - m_RefCount: 20
     m_Data: {fileID: 21300000, guid: 342a2dfa656e9b548aa5c90f5d25371f, type: 3}
-=======
-  m_AnimatedTiles: {}
-  m_TileAssetArray:
-  - m_RefCount: 3
-    m_Data: {fileID: 11400000, guid: d4c2028f9650dff4aaf57b522408cae5, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: dc885fc73ee318b4c99df3e471e0755c, type: 2}
-  - m_RefCount: 4
-    m_Data: {fileID: 11400000, guid: ef16c43eb74d8ef4a87d671029e7f560, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: f2f12b6ef9b812a4b9ffb2a7bd3d8171, type: 2}
-  - m_RefCount: 17
-    m_Data: {fileID: 11400000, guid: 8ecc38fc48ad5074fb215794427c547b, type: 2}
-  m_TileSpriteArray:
-  - m_RefCount: 3
-    m_Data: {fileID: 7180208572687615227, guid: 6d93f45b6b4342749a516381fdc802c8, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -4594108545075643932, guid: 6d93f45b6b4342749a516381fdc802c8, type: 3}
-  - m_RefCount: 4
-    m_Data: {fileID: 9166125722054658032, guid: 6d93f45b6b4342749a516381fdc802c8, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -2549968003841791753, guid: 6d93f45b6b4342749a516381fdc802c8, type: 3}
-  - m_RefCount: 17
-    m_Data: {fileID: 21300000, guid: 5042e67c73cb24e4bafa6fec17d7fabf, type: 3}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
   m_TileMatrixArray:
   - m_RefCount: 100
     m_Data:
@@ -2057,13 +1871,8 @@ Tilemap:
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-<<<<<<< HEAD
   m_Origin: {x: -37, y: -18, z: 0}
   m_Size: {x: 68, y: 32, z: 1}
-=======
-  m_Origin: {x: -10, y: -6, z: 0}
-  m_Size: {x: 32, y: 7, z: 1}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -2085,7 +1894,6 @@ Tilemap:
     e33: 1
 --- !u!19719996 &273645122
 TilemapCollider2D:
-<<<<<<< HEAD
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5730,8 +5538,6 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
 --- !u!1 &1331245046
 GameObject:
-=======
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5950,7 +5756,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386087149}
   m_CullTransparentMesh: 0
-<<<<<<< HEAD
 --- !u!1 &1435642004
 GameObject:
   m_ObjectHideFlags: 0
@@ -6148,9 +5953,6 @@ Transform:
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1490187355
-=======
---- !u!1 &332194112
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6544,19 +6346,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
       value: 23.039999
       objectReference: {fileID: 0}
     - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 2.5600002
-=======
-      value: -7.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.92
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
       objectReference: {fileID: 0}
     - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6792,7 +6586,6 @@ RectTransform:
   m_Father: {fileID: 1718791099}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 3.6838708}
@@ -6837,9 +6630,6 @@ CanvasRenderer:
   m_GameObject: {fileID: 1640402391}
   m_CullTransparentMesh: 0
 --- !u!1 &1656470673
-=======
---- !u!1 &519420028
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6858,40 +6648,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
 --- !u!224 &1656470674
 RectTransform:
-=======
---- !u!81 &519420029
-AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
---- !u!114 &519420030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b56212ae726a02e47adeafdbb63d48be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  target: {fileID: 537836815}
---- !u!20 &519420031
-Camera:
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1656470673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -6908,47 +6670,6 @@ Camera:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1656470675
 MonoBehaviour:
-=======
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 1
-  orthographic size: 3.2
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 0
-  m_HDR: 1
-  m_AllowMSAA: 0
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 0
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &519420032
-Transform:
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -7057,79 +6778,17 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-<<<<<<< HEAD
   m_IsActive: 0
 --- !u!224 &1667970034
 RectTransform:
-=======
-  m_IsActive: 1
---- !u!212 &537836814
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 537836813}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a6a1b2e1b0a59194793667c1cd4bdafe, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1.28, y: 2.56}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &537836815
-Transform:
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667970033}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-=======
-  m_LocalPosition: {x: -10.36, y: -1.22, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
   m_Children:
   - {fileID: 1173183392}
   - {fileID: 1153944909}
@@ -7137,53 +6796,12 @@ Transform:
   m_Father: {fileID: 1628824016}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -592.13275, y: -335.85565}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1667970035
-=======
---- !u!50 &537836816
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 537836813}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!70 &537836817
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 537836813}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.02975397, y: -0.64326304}
-  m_Size: {x: 2.206454, y: 1.2731513}
-  m_Direction: 1
---- !u!114 &537836818
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7195,7 +6813,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.10400232, b: 0, a: 1}
   m_RaycastTarget: 1
@@ -7216,44 +6833,13 @@ MonoBehaviour:
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1667970036
 CanvasRenderer:
-=======
-  speed: 6
-  jumpHeight: 13
-  groundCheck: {fileID: 1730481126}
-  main: {fileID: 519420033}
-  androidControl: 0
-  joustick: {fileID: 1294980227}
-  stepSound: {fileID: 447071527}
-  carrotEatSounds:
-  - {fileID: 2109057391}
-  - {fileID: 715943854}
---- !u!95 &537836819
-Animator:
-  serializedVersion: 3
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1667970033}
   m_CullTransparentMesh: 0
 --- !u!1 &1670320480
-=======
-  m_GameObject: {fileID: 537836813}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 58a5f473c9a5c9e4fb9b0a695b1233eb, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &632339296
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7261,129 +6847,21 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD
   - component: {fileID: 1670320481}
   - component: {fileID: 1670320482}
   m_Layer: 0
   m_Name: +3
-=======
-  - component: {fileID: 632339298}
-  - component: {fileID: 632339297}
-  m_Layer: 0
-  m_Name: BackgroundMusic
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
 --- !u!4 &1670320481
-=======
---- !u!82 &632339297
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 632339296}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 4019007010027956304, guid: cbe66e37d1ed7d643a857dbb292d0168, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 3df43d68c5c7b974085ff5b3ffaf799b, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.51
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &632339298
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1670320480}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 30.72, y: 0, z: 0}
@@ -7394,23 +6872,10 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1670320482
 SpriteRenderer:
-=======
-  m_GameObject: {fileID: 632339296}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.801857, y: -1.9188954, z: -10.714287}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &715943852
-GameObject:
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1670320480}
   m_Enabled: 1
   m_CastShadows: 0
@@ -7457,20 +6922,6 @@ GameObject:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1677519346 stripped
-=======
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 715943853}
-  - component: {fileID: 715943854}
-  m_Layer: 0
-  m_Name: CarrotEatSound2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &715943853
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
 Transform:
   m_CorrespondingSourceObject: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
   m_PrefabInstance: {fileID: 1624357834}
@@ -7548,7 +6999,6 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1683295402}
   m_CullTransparentMesh: 0
 --- !u!1 &1695679870
@@ -7661,11 +7111,6 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1718791098
-=======
-  m_GameObject: {fileID: 788942627}
-  m_CullTransparentMesh: 0
---- !u!1 &827724794
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7746,7 +7191,6 @@ CanvasRenderer:
 --- !u!1 &1730481125
 GameObject:
   m_ObjectHideFlags: 0
-<<<<<<< HEAD
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -7870,15 +7314,12 @@ Transform:
 --- !u!1001 &1794393868
 PrefabInstance:
   m_ObjectHideFlags: 0
-=======
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 1535789172}
     m_Modifications:
     - target: {fileID: 3755437727752049440, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_Name
-<<<<<<< HEAD
       value: Carrot (15)
       objectReference: {fileID: 0}
     - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
@@ -7888,17 +7329,6 @@ PrefabInstance:
     - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 33.28
-=======
-      value: Carrot (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -7.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.92
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
       objectReference: {fileID: 0}
     - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7922,11 +7352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
       value: 19
-=======
-      value: 2
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
       objectReference: {fileID: 0}
     - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7942,32 +7368,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
-<<<<<<< HEAD
 --- !u!4 &1797496458 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
   m_PrefabInstance: {fileID: 3755437727066181031}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1805800131
-=======
---- !u!224 &1294980226 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-  m_PrefabInstance: {fileID: 1606011723}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1294980227 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-  m_PrefabInstance: {fileID: 1606011723}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1518272160
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7990,7 +7396,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1805800131}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 145.86398, y: -84.568, z: 0}
@@ -7998,16 +7403,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 273645119}
   m_RootOrder: 3
-=======
-  m_GameObject: {fileID: 1518272160}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1879910567}
-  m_Father: {fileID: 1757466725}
-  m_RootOrder: 1
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1805800133
 SpriteRenderer:
@@ -8088,18 +7483,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-<<<<<<< HEAD
   m_Children: []
   m_Father: {fileID: 635662137}
-=======
-  m_Children:
-  - {fileID: 1797496458}
-  - {fileID: 1767368151}
-  - {fileID: 2039139902}
-  - {fileID: 1677519346}
-  - {fileID: 422580634}
-  m_Father: {fileID: 1757466725}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -8306,203 +7691,9 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1845426899}
   m_CullTransparentMesh: 0
 --- !u!1 &1849800501
-=======
-  m_GameObject: {fileID: 1580789238}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1606011723
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1628824016}
-    m_Modifications:
-    - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: cd0a2c1b2c014ba4c80c1df786e150e9, type: 3}
-    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 148
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 76.99998
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 222.10129
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 222.10129
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252283123773939, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_Name
-      value: Fixed Joystick
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: axisOptions
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252285020697096, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252285020697096, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252285020697096, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 102.23712
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252285020697096, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 102.23712
-      objectReference: {fileID: 0}
-    - target: {fileID: 2929252285020698103, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 3a74f678ee8f3bd49aacf3de1ae4bcaa, type: 3}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
---- !u!1001 &1624357834
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1535789172}
-    m_Modifications:
-    - target: {fileID: 3755437727752049440, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
-      propertyPath: m_Name
-      value: Carrot (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -7.3599997
-      objectReference: {fileID: 0}
-    - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
---- !u!1 &1628824012
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8625,7 +7816,6 @@ Transform:
   m_Father: {fileID: 1751667995}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
 --- !u!212 &1908298695
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8678,14 +7868,6 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1908633575
-=======
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
---- !u!1 &1640402391
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8899,7 +8081,6 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1932202054}
   m_CullTransparentMesh: 0
 --- !u!1001 &1936307700
@@ -9104,11 +8285,6 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2039139902 stripped
-=======
-  m_GameObject: {fileID: 1656470673}
-  m_CullTransparentMesh: 0
---- !u!4 &1677519346 stripped
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
 Transform:
   m_CorrespondingSourceObject: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
   m_PrefabInstance: {fileID: 884112465}
@@ -9175,7 +8351,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-<<<<<<< HEAD
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 25
@@ -9192,183 +8367,10 @@ MonoBehaviour:
   m_Text: "\u0426\u0435\u043B\u044C:"
 --- !u!222 &2101521959
 CanvasRenderer:
-=======
-  m_Sprite: {fileID: 21300000, guid: a159b1a488704e148b1a28df7233cc7f, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1718791101
-CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1718791098}
-  m_CullTransparentMesh: 0
---- !u!1 &1730481125
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1730481126}
-  m_Layer: 0
-  m_Name: GroundCheck
-  m_TagString: Untagged
-  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1730481126
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1730481125}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.281, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 537836815}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1751667994
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1751667995}
-  m_Layer: 0
-  m_Name: BG
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1751667995
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1751667994}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 50}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 128033242}
-  - {fileID: 6051751}
-  - {fileID: 1849800502}
-  m_Father: {fileID: 519420032}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1757466723
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1757466725}
-  - component: {fileID: 1757466724}
-  m_Layer: 0
-  m_Name: Grid
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!156049354 &1757466724
-Grid:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1757466723}
-  m_Enabled: 1
-  m_CellSize: {x: 1.28, y: 1.28, z: 0}
-  m_CellGap: {x: 0, y: 0, z: 0}
-  m_CellLayout: 0
-  m_CellSwizzle: 0
---- !u!4 &1757466725
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1757466723}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 273645119}
-  - {fileID: 1518272161}
-  - {fileID: 1535789172}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1767368151 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
-  m_PrefabInstance: {fileID: 416873925}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1797496458 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
-  m_PrefabInstance: {fileID: 3755437727066181031}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1849800501
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1849800502}
-  - component: {fileID: 1849800503}
-  m_Layer: 0
-  m_Name: -1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1849800502
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1849800501}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.24, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.5, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1751667995}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1849800503
-SpriteRenderer:
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 2101521956}
   m_CullTransparentMesh: 0
 --- !u!1 &2105527140
@@ -9409,9 +8411,6 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105527140}
-=======
-  m_GameObject: {fileID: 1849800501}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -9445,35 +8444,18 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-<<<<<<< HEAD
   m_Sprite: {fileID: 21300000, guid: 00d1cea3993916b4cb5bd69859b3c897, type: 3}
-=======
-  m_Sprite: {fileID: 21300000, guid: 833a2d3af5dcca24d8b9e49a27cae79d, type: 3}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-<<<<<<< HEAD
   m_Size: {x: 1.28, y: 1.28}
-=======
-  m_Size: {x: 10.24, y: 10.24}
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-<<<<<<< HEAD
 --- !u!4 &2108835559 stripped
-=======
---- !u!4 &1879910567 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8439186514958417866, guid: 874044aff97fdad4fb9c754ab47cba24, type: 3}
-  m_PrefabInstance: {fileID: 267126997}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2039139902 stripped
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
 Transform:
   m_CorrespondingSourceObject: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
   m_PrefabInstance: {fileID: 995432472}
@@ -9833,19 +8815,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
       value: -64
       objectReference: {fileID: 0}
     - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 12.799999
-=======
-      value: -8.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.92
->>>>>>> parent of b519e28 (Переход на 512, новые формы травы, трава с лужей)
       objectReference: {fileID: 0}
     - target: {fileID: 3755437727752049453, guid: b048795342a5b5843bfaf8c4141e248e, type: 3}
       propertyPath: m_LocalPosition.z
