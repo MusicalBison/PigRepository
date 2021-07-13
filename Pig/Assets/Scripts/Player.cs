@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -23,6 +24,10 @@ public class Player : MonoBehaviour
 
     public AudioSource stepSound;
     public AudioSource[] carrotEatSounds;
+    public AudioSource fallingInDirt;
+    public AudioSource takingOfDirt;
+    public AudioSource fallingInLeaves;
+    public AudioSource takingOfLeaves;
 
     public bool isDirt = false;
     public bool inDirt = false;
@@ -31,6 +36,8 @@ public class Player : MonoBehaviour
 
     public bool immobility = false;
     public bool upsideDown = false;
+
+    public MyButton right, left;
 
     void Start() // Этот метод вызывается 1 раз в начале игры
     {
@@ -45,12 +52,12 @@ public class Player : MonoBehaviour
         Dirting();
         Jump();
         CheckGround();
-        if  (!immobility)
+        if (!immobility)
         {
             // Усанавливаем анимацию бездействия и ходьбы
             if (!androidControl)
             {
-                if (Input.GetAxis("Horizontal") == 0 && isGrounded && !immobility)
+                if ((Input.GetAxis("Horizontal") == 0 || (right.buttonPressed == false && left.buttonPressed == false)) && isGrounded && !immobility)
                 {
                     if (isLeaves) anim.SetInteger("State", 6);
                     else if (isDirt) anim.SetInteger("State", 5);
@@ -82,7 +89,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                if (joustick.Horizontal <= 0.3f && joustick.Horizontal >= -0.3f && isGrounded)
+                if (((joustick.Horizontal <= 0.3f && joustick.Horizontal >= -0.3f) || (right.buttonPressed == false && left.buttonPressed == false)) && isGrounded)
                 {
                     isGo = false;
                     if (isLeaves) anim.SetInteger("State", 6);
@@ -107,7 +114,7 @@ public class Player : MonoBehaviour
                 }
 
                 // Смерть при падении
-                if (transform.position.y < -120f)
+                if (transform.position.y < -100f)
                 {
                     Lose();
                 }
@@ -125,9 +132,9 @@ public class Player : MonoBehaviour
                 rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
             else
             {
-                if (joustick.Horizontal >= 0.3f)
+                if (joustick.Horizontal >= 0.3f || right.buttonPressed == true)
                     rb.velocity = new Vector2(speed, rb.velocity.y);
-                else if (joustick.Horizontal <= -0.3f)
+                else if (joustick.Horizontal <= -0.3f || left.buttonPressed == true)
                     rb.velocity = new Vector2(-speed, rb.velocity.y);
                 else
                     rb.velocity = new Vector2(0, rb.velocity.y);
@@ -154,9 +161,9 @@ public class Player : MonoBehaviour
         }
         else // Если управляем джойстиком
         {
-            if (joustick.Horizontal >= 0.3f) // Поворот направо
+            if (joustick.Horizontal >= 0.3f || right.buttonPressed == true) // Поворот направо
                 transform.localRotation = Quaternion.Euler(0, 0, 0);
-            if (joustick.Horizontal <= -0.3f) // Поворот налево
+            if (joustick.Horizontal <= -0.3f || left.buttonPressed == true) // Поворот налево
                 transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
         
@@ -315,6 +322,7 @@ public class Player : MonoBehaviour
             {
                 if (!upsideDown)
                 {
+                    fallingInDirt.Play();
                     upsideDown = true;
                     immobility = true;
                     //transform.position = new Vector3(collision.transform.position.x, transform.position.y, transform.position.z); // центр грязи
@@ -322,6 +330,7 @@ public class Player : MonoBehaviour
                 }
                 else
                 {
+                    if (!isDirt) takingOfDirt.Play();
                     upsideDown = false;
                     immobility = false;
                     isDirt = true;
@@ -340,6 +349,7 @@ public class Player : MonoBehaviour
             {
                 if (!upsideDown)
                 {
+                    fallingInLeaves.Play();
                     upsideDown = true;
                     immobility = true;
                     //transform.position = new Vector3(collision.transform.position.x, transform.position.y, transform.position.z); // центр грязи
@@ -347,6 +357,7 @@ public class Player : MonoBehaviour
                 }
                 else
                 {
+                    if (!isLeaves) takingOfLeaves.Play();
                     upsideDown = false;
                     immobility = false;
                     if (isDirt) isLeaves = true;
@@ -365,6 +376,7 @@ public class Player : MonoBehaviour
             {
                 if (!upsideDown)
                 {
+                    fallingInDirt.Play();
                     upsideDown = true;
                     immobility = true;
                     //transform.position = new Vector3(collision.transform.position.x, transform.position.y, transform.position.z); // центр грязи
@@ -372,6 +384,7 @@ public class Player : MonoBehaviour
                 }
                 else
                 {
+                    if (!isDirt) takingOfDirt.Play();
                     upsideDown = false;
                     immobility = false;
                     isDirt = true;
@@ -387,6 +400,7 @@ public class Player : MonoBehaviour
             {
                 if (!upsideDown)
                 {
+                    fallingInLeaves.Play();
                     upsideDown = true;
                     immobility = true;
                     //transform.position = new Vector3(collision.transform.position.x, transform.position.y, transform.position.z); // центр грязи
@@ -394,6 +408,7 @@ public class Player : MonoBehaviour
                 }
                 else
                 {
+                    if (!isLeaves) takingOfLeaves.Play();
                     upsideDown = false;
                     immobility = false;
                     if (isDirt) isLeaves = true;

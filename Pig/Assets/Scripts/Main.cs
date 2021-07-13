@@ -11,7 +11,7 @@ public class Main : MonoBehaviour
     public Image[] hearts; // Массив сердечек
     public Sprite is_hp, no_hp;
 
-    public GameObject winPanel, losePanel, enterPanel, barrierPanel;
+    public GameObject winPanel, losePanel, losePanel2, enterPanel, barrierPanel;
 
     public GameObject exit;
 
@@ -31,7 +31,8 @@ public class Main : MonoBehaviour
 
     public void Win()
     {
-        winPanel.SetActive(true);
+        if (!player.isLeaves) losePanel2.SetActive(true);
+        else winPanel.SetActive(true);
         Time.timeScale = 0;
         player.enabled = false;
     }
