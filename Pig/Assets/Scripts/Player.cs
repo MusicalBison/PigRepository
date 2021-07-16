@@ -8,8 +8,12 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     public float speed = 5f; // Скорость
     public float jumpHeight = 5f; // Высота прыжка
+    private float moveInput;
+    private bool facingRight = true;
+    public float checkRadius = 0.3f;
     public Transform groundCheck; // Позиция GroundCheck
     bool isGrounded; // Наличие земли под ногами у игрока
+    public float normalSpeed;
     Animator anim; // Переменная, отвечающая за анимацию
     int maxHp = 3; // Максимальное кол-во жизней
     int curHp; // Текущее кол-во жизней
@@ -20,7 +24,7 @@ public class Player : MonoBehaviour
     //public bool isFlip = false;
 
     public bool androidControl = false; // Переменная, отвечающая за тип управления (Клавиши/Джойстик)
-    public Joystick joustick; // Джойстик
+    //public Joystick joustick; // Джойстик
 
     public AudioSource stepSound;
     public AudioSource[] carrotEatSounds;
@@ -28,11 +32,16 @@ public class Player : MonoBehaviour
     public AudioSource takingOfDirt;
     public AudioSource fallingInLeaves;
     public AudioSource takingOfLeaves;
+    public AudioSource pigDamageSound;
+    public AllAudio allAudio;
 
     public bool isDirt = false;
     public bool inDirt = false;
+    public GameObject[] dirtArray;
     public bool isLeaves = false;
     public bool inLeaves = false;
+    public GameObject[] leavesArray;
+
 
     public bool immobility = false;
     public bool upsideDown = false;
@@ -41,9 +50,19 @@ public class Player : MonoBehaviour
 
     void Start() // Этот метод вызывается 1 раз в начале игры
     {
+        speed = 0f;
         rb = GetComponent<Rigidbody2D>(); // Связываем переменную rb с нашим компонентом Rigidbody2D
         anim = GetComponent<Animator>(); // Связываем переменную anim с нашим Animator
         curHp = maxHp;
+
+        for (int i = 0; i<dirtArray.Length; i++)
+        {
+            dirtArray[i].SetActive(false);
+        }
+        for (int i = 0; i < leavesArray.Length; i++)
+        {
+            leavesArray[i].SetActive(false);
+        }
     }
 
     void Update() // Этот метод вызывается каждый кадр
@@ -52,10 +71,15 @@ public class Player : MonoBehaviour
         Dirting();
         Jump();
         CheckGround();
+        // Смерть при падении
+        if (transform.position.y < -100f)
+        {
+            Lose();
+        }
         if (!immobility)
         {
             // Усанавливаем анимацию бездействия и ходьбы
-            if (!androidControl)
+            /*if (!androidControl)
             {
                 if ((Input.GetAxis("Horizontal") == 0 || (right.buttonPressed == false && left.buttonPressed == false)) && isGrounded && !immobility)
                 {
@@ -72,7 +96,7 @@ public class Player : MonoBehaviour
                         isGo = true;
                     }
 
-                    Flip();
+                    //Flip();
                     if (isGrounded)
                     {
                         if (isLeaves) anim.SetInteger("State", 8);
@@ -80,16 +104,10 @@ public class Player : MonoBehaviour
                         else anim.SetInteger("State", 2);
                     }
                 }
-
-                // Смерть при падении
-                if (transform.position.y < -100f)
-                {
-                    Lose();
-                }
             }
             else
             {
-                if (((joustick.Horizontal <= 0.3f && joustick.Horizontal >= -0.3f) || (right.buttonPressed == false && left.buttonPressed == false)) && isGrounded)
+                if (((right.buttonPressed == false && left.buttonPressed == false)) && isGrounded)
                 {
                     isGo = false;
                     if (isLeaves) anim.SetInteger("State", 6);
@@ -104,7 +122,7 @@ public class Player : MonoBehaviour
                         isGo = true;
                     }
 
-                    Flip();
+                    //Flip();
                     if (isGrounded)
                     {
                         if (isLeaves) anim.SetInteger("State", 8);
@@ -112,96 +130,112 @@ public class Player : MonoBehaviour
                         else anim.SetInteger("State", 2);
                     }
                 }
-
-                // Смерть при падении
-                if (transform.position.y < -100f)
-                {
-                    Lose();
-                }
-            }
+            }*/
         }
-        
-        
     }
-
-    void FixedUpdate() // Этот метод вызывается определённое число раз в секунду
+    private void FixedUpdate() // Этот метод вызывается определённое число раз в секунду
     {
         if (!immobility)
         {
             if (!androidControl)
-                rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
+            {
+                moveInput = Input.GetAxis("Horizontal");
+                rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+                if (facingRight == false && moveInput > 0)
+                {
+                    Flip();
+                }
+                else if (facingRight == true && moveInput < 0)
+                {
+                    Flip();
+                }
+                if (moveInput == 0)
+                {
+                    anim.SetBool("isRunning", false);
+                }
+                else
+                {
+                    anim.SetBool("isRunning", true);
+                }
+            }
             else
             {
-                if (joustick.Horizontal >= 0.3f || right.buttonPressed == true)
-                    rb.velocity = new Vector2(speed, rb.velocity.y);
-                else if (joustick.Horizontal <= -0.3f || left.buttonPressed == true)
-                    rb.velocity = new Vector2(-speed, rb.velocity.y);
-                else
-                    rb.velocity = new Vector2(0, rb.velocity.y);
+                rb.velocity = new Vector2(speed, rb.velocity.y);
+                if (speed != 0)
+                {
+                    anim.SetBool("isRunning", true);
+                }
             }
         }
     }
-
-    // Метод, отвечающий за поворот
+    public void OnLeftButtonDown()
+    {
+        if (speed >= 0f && !immobility)
+        {
+            speed = -normalSpeed;
+            transform.eulerAngles = new Vector3(transform.localRotation.x, 180, transform.localRotation.z);
+        }
+    }
+    public void OnRightButtonDown()
+    {
+        if (speed <= 0f && !immobility)
+        {
+            speed = normalSpeed;
+            transform.eulerAngles = new Vector3(transform.localRotation.x, 0, transform.localRotation.z);
+        }
+    }
+    public void OnButtonUp()
+    {
+        speed = 0f;
+        anim.SetBool("isRunning", false);
+    }
     void Flip()
     {
-        //if (isFlip)
-        //isFlip = true;
-        if (!androidControl)
-        {
-            if (Input.GetAxis("Horizontal") > 0)
-            {
-                transform.localRotation = Quaternion.Euler(transform.localRotation.x, 0, 0);
-            }
-
-            if (Input.GetAxis("Horizontal") < 0)
-            {
-                transform.localRotation = Quaternion.Euler(transform.localRotation.x, 180, 0);
-            }
-        }
-        else // Если управляем джойстиком
-        {
-            if (joustick.Horizontal >= 0.3f || right.buttonPressed == true) // Поворот направо
-                transform.localRotation = Quaternion.Euler(0, 0, 0);
-            if (joustick.Horizontal <= -0.3f || left.buttonPressed == true) // Поворот налево
-                transform.localRotation = Quaternion.Euler(0, 180, 0);
-        }
-        
+            facingRight = !facingRight;
+            Vector3 Scaler = transform.localScale;
+            Scaler.x *= -1;
+            transform.localScale = Scaler;
     }
 
-    // Метод, отвечающий за прыжок
     void Jump()
     {
         if (!androidControl && Input.GetKeyDown(KeyCode.Space) && isGrounded && !immobility)
         {
             rb.AddForce(transform.up * jumpHeight, ForceMode2D.Impulse);
-            //anim.SetInteger("State", 3);
+            anim.SetTrigger("takeOff");;
         }
     }
 
-    // Прыжок, который вызывается при нажатии на кнопку на экране
-    public void JumpAndroid()
+    public void OnButtonAndroid()
     {
         if (isGrounded && !immobility)
         {
             rb.AddForce(transform.up * jumpHeight, ForceMode2D.Impulse);
+            anim.SetTrigger("takeOff");
         }
     }
 
     // Метод, проверяющий на земле ли игрок
     void CheckGround()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, 0.2f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, checkRadius);
         isGrounded = colliders.Length > 1;
         // Усанавливаем анимацию прыжка
-        if (!isGrounded) // isGrounded == false 
+        if (isGrounded)
+        {
+            anim.SetBool("isJumping", false);
+        }
+        else
+        {
+            anim.SetBool("isJumping", true);
+        }
+        /*if (!isGrounded) // isGrounded == false 
         {
             if (isLeaves) anim.SetInteger("State", 10);
             else if (isDirt) anim.SetInteger("State", 9);
             else anim.SetInteger("State", 4);
-        }
+        }*/
     }
-
     // Метод, который пересчитывает текущее кол-во жизней
     public void RecountHp(int deltaHp)
     {
@@ -210,6 +244,7 @@ public class Player : MonoBehaviour
 
         if (deltaHp < 0)
         {
+            pigDamageSound.Play();
             //StopCoroutine(OnHit());
             isHit = true;
             StartCoroutine(OnHit()); // Запуск корутины OnHit
@@ -251,16 +286,14 @@ public class Player : MonoBehaviour
             StartCoroutine(OnHit()); // Вызов текущей корутины
     }
 
-    // Метод, который вызывается, когда наш герой соприкасается с...
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Carrot") // ... монетой
         {
             Destroy(collision.gameObject);
             carrots++;
-            int a = Random.Range(0, 2);
-            if (a == 0) carrotEatSounds[0].Play();
-            else carrotEatSounds[1].Play();
+            allAudio.carrotsBool = true;
+            
         }
 
         if (collision.tag == "PuddleOfMud")
@@ -277,8 +310,7 @@ public class Player : MonoBehaviour
         }
         if (collision.tag == "Exit")
         {
-            if (isLeaves) main.Win();
-            else main.Lose();
+            main.Win();
         }
     }
 
@@ -372,50 +404,66 @@ public class Player : MonoBehaviour
     {
         if (inDirt)
         {
-            if (true)
+            if (!upsideDown)
             {
-                if (!upsideDown)
+                fallingInDirt.Play();
+                upsideDown = true;
+                immobility = true;
+                //transform.position = new Vector3(collision.transform.position.x, transform.position.y, transform.position.z); // центр грязи
+                transform.localRotation = Quaternion.Euler(180, transform.localRotation.y, transform.localRotation.z);
+            }
+            else
+            {
+                if (!isDirt)
                 {
-                    fallingInDirt.Play();
-                    upsideDown = true;
-                    immobility = true;
-                    //transform.position = new Vector3(collision.transform.position.x, transform.position.y, transform.position.z); // центр грязи
-                    transform.localRotation = Quaternion.Euler(180, transform.localRotation.y, transform.localRotation.z);
+                    takingOfDirt.Play();
+                    // Если грязи не было, то она  появляется визуально
+                    for (int i = 0; i < dirtArray.Length; i++)
+                    {
+                        dirtArray[i].SetActive(true);
+                    }
                 }
-                else
-                {
-                    if (!isDirt) takingOfDirt.Play();
-                    upsideDown = false;
-                    immobility = false;
-                    isDirt = true;
-                    transform.position = new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z);
-                    transform.localRotation = Quaternion.Euler(0, transform.localRotation.y, transform.localRotation.z);
-                }
+
+                upsideDown = false;
+                immobility = false;
+                isDirt = true;
+                transform.position = new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z);
+                transform.localRotation = Quaternion.Euler(0, transform.localRotation.y, transform.localRotation.z);
             }
         }
 
         if (inLeaves)
         {
-            if (true)
+            if (!upsideDown)
             {
-                if (!upsideDown)
-                {
-                    fallingInLeaves.Play();
-                    upsideDown = true;
-                    immobility = true;
-                    //transform.position = new Vector3(collision.transform.position.x, transform.position.y, transform.position.z); // центр грязи
-                    transform.localRotation = Quaternion.Euler(180, transform.localRotation.y, transform.localRotation.z);
-                }
-                else
-                {
-                    if (!isLeaves) takingOfLeaves.Play();
-                    upsideDown = false;
-                    immobility = false;
-                    if (isDirt) isLeaves = true;
-                    transform.position = new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z);
-                    transform.localRotation = Quaternion.Euler(0, transform.localRotation.y, transform.localRotation.z);
-                }
+                fallingInLeaves.Play();
+                upsideDown = true;
+                immobility = true;
+                //transform.position = new Vector3(collision.transform.position.x, transform.position.y, transform.position.z); // центр грязи
+                transform.localRotation = Quaternion.Euler(180, transform.localRotation.y, transform.localRotation.z);
             }
+            else
+            {
+                if (!isLeaves)
+                {
+                    takingOfLeaves.Play();
+                }
+                        
+                upsideDown = false;
+                immobility = false;
+                if (isDirt)
+                {
+                    isLeaves = true;
+                    // Если листьев не было, то они появляются визуально
+                    for (int i = 0; i < leavesArray.Length; i++)
+                    {
+                        leavesArray[i].SetActive(true);
+                    }
+                }
+                transform.position = new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z);
+                transform.localRotation = Quaternion.Euler(0, transform.localRotation.y, transform.localRotation.z);
+            }
+        
         }
     }    
 }
