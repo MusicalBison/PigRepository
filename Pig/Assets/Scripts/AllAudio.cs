@@ -5,13 +5,23 @@ using UnityEngine;
 public class AllAudio : MonoBehaviour
 {
     public bool carrotsBool = false;
-    public AudioClip carrotSound1;
-    public AudioClip carrotSound2;
+    public bool stepsBool = false;
     AudioSource audioSource;
+    public AudioClip[] carrotSounds;
+    
+    public AudioClip[] stepSounds;
+    public AudioSource stepsAudioSource;
+    [Range(0f,1f)]
+    public float stepsVolume;
+
+    public bool refrigeratorOpenBool;
+    public bool refrigeratorCloseBool;
+    public AudioClip[] refrigeratorSounds;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        stepsAudioSource.volume = stepsVolume;
     }
 
 
@@ -20,9 +30,22 @@ public class AllAudio : MonoBehaviour
         if (carrotsBool)
         {
             carrotsBool = false;
-            int a = Random.Range(0, 2);
-            if (a == 0) audioSource.PlayOneShot(carrotSound1);
-            else audioSource.PlayOneShot(carrotSound2);
+            audioSource.PlayOneShot(carrotSounds[Random.Range(0, carrotSounds.Length)]);
         }    
+        if (stepsBool)
+        {
+            stepsBool = false;
+            stepsAudioSource.PlayOneShot(stepSounds[Random.Range(0, stepSounds.Length)]);
+        }
+        if (refrigeratorOpenBool)
+        {
+            refrigeratorOpenBool = false;
+            audioSource.PlayOneShot(refrigeratorSounds[0]);
+        }
+        if (refrigeratorCloseBool)
+        {
+            refrigeratorCloseBool = false;
+            audioSource.PlayOneShot(refrigeratorSounds[1]);
+        }
     }
 }

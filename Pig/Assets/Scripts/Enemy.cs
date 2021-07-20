@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<Player>().RecountHp(-1);
-            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * 500f, ForceMode2D.Impulse);
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * collision.gameObject.GetComponent<Player>().jumpHeight, ForceMode2D.Impulse);
         }
     }
 }

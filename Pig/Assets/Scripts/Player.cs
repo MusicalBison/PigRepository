@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.UI;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -11,15 +11,15 @@ public class Player : MonoBehaviour
     private float moveInput;
     private bool facingRight = true;
     public float checkRadius = 0.3f;
+    public float refrigeratorRadius = 7f;
     public Transform groundCheck; // Позиция GroundCheck
     bool isGrounded; // Наличие земли под ногами у игрока
     public float normalSpeed;
     Animator anim; // Переменная, отвечающая за анимацию
-    int maxHp = 3; // Максимальное кол-во жизней
-    int curHp; // Текущее кол-во жизней
+    int maxHp = 4; // Максимальное кол-во жизней
+    int curHp = 4; // Текущее кол-во жизней
     public Main main; // Публичная переменная типа Main
     bool isHit = false; // Вспомогательная переменная, которая равна true, когда Тор краснеет
-    bool isGo = false;
     private int carrots = 0; // Монеты
     //public bool isFlip = false;
 
@@ -41,20 +41,33 @@ public class Player : MonoBehaviour
     public bool isLeaves = false;
     public bool inLeaves = false;
     public GameObject[] leavesArray;
+    bool inRefrigerator = false;
+    GameObject refrigerator;
+
+    public bool isBolt = false;
+    public bool isCircle = false;
 
 
     public bool immobility = false;
     public bool upsideDown = false;
 
-    public MyButton right, left;
+    // public MyButton right, left;
+
+    public bool fullInventory = false;
+    public Text inventoryText;
+    public Image inventoryImage;
+    public Sprite circleSprite, boltSprite;
+
+    public int currentCarrotsAim;
+
 
     void Start() // Этот метод вызывается 1 раз в начале игры
     {
+        curHp = maxHp;
         speed = 0f;
         rb = GetComponent<Rigidbody2D>(); // Связываем переменную rb с нашим компонентом Rigidbody2D
         anim = GetComponent<Animator>(); // Связываем переменную anim с нашим Animator
-        curHp = maxHp;
-
+        
         for (int i = 0; i<dirtArray.Length; i++)
         {
             dirtArray[i].SetActive(false);
@@ -72,7 +85,7 @@ public class Player : MonoBehaviour
         Jump();
         CheckGround();
         // Смерть при падении
-        if (transform.position.y < -100f)
+        if (main.GetActiveSceneIndex() == 1 && transform.position.y < -100f || main.GetActiveSceneIndex() == 2 && transform.position.y < -150f)
         {
             Lose();
         }
@@ -184,7 +197,7 @@ public class Player : MonoBehaviour
             transform.eulerAngles = new Vector3(transform.localRotation.x, 0, transform.localRotation.z);
         }
     }
-    public void OnButtonUp()
+    public void OnButtonUp() // срабатывает при отпускании кнопок вправо, влево
     {
         speed = 0f;
         anim.SetBool("isRunning", false);
@@ -196,7 +209,6 @@ public class Player : MonoBehaviour
             Scaler.x *= -1;
             transform.localScale = Scaler;
     }
-
     void Jump()
     {
         if (!androidControl && Input.GetKeyDown(KeyCode.Space) && isGrounded && !immobility)
@@ -205,7 +217,6 @@ public class Player : MonoBehaviour
             anim.SetTrigger("takeOff");;
         }
     }
-
     public void OnButtonAndroid()
     {
         if (isGrounded && !immobility)
@@ -214,8 +225,6 @@ public class Player : MonoBehaviour
             anim.SetTrigger("takeOff");
         }
     }
-
-    // Метод, проверяющий на земле ли игрок
     void CheckGround()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, checkRadius);
@@ -236,7 +245,6 @@ public class Player : MonoBehaviour
             else anim.SetInteger("State", 4);
         }*/
     }
-    // Метод, который пересчитывает текущее кол-во жизней
     public void RecountHp(int deltaHp)
     {
         curHp = curHp + deltaHp;
@@ -257,14 +265,11 @@ public class Player : MonoBehaviour
             Invoke("Lose", 1.5f);
         }
     }
-
-    // Метод, который вызывает перезагрузку текущей сцены
     void Lose()
     {
         main.GetComponent<Main>().Lose();
     }
-
-    // Корутина, плавно изменяющая цвет Тора во время получения урона
+    // Корутина, плавно изменяющая цвет игрока во время получения урона
     IEnumerator OnHit()
     {
         // Покраснение и возврат к исходному цвету
@@ -285,15 +290,13 @@ public class Player : MonoBehaviour
         if (GetComponent<SpriteRenderer>().color.g != 1)
             StartCoroutine(OnHit()); // Вызов текущей корутины
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Carrot") // ... монетой
         {
             Destroy(collision.gameObject);
             carrots++;
-            allAudio.carrotsBool = true;
-            
+            allAudio.carrotsBool = true; 
         }
 
         if (collision.tag == "PuddleOfMud")
@@ -306,14 +309,40 @@ public class Player : MonoBehaviour
         }
         if (collision.tag == "Barrier")
         {
-            if (carrots < 15) main.Barrier();
+            if (main.GetActiveSceneIndex() == 1 && carrots < currentCarrotsAim) main.Barrier();
+            if (main.GetActiveSceneIndex() == 2 && carrots < currentCarrotsAim) main.Barrier();
+
         }
         if (collision.tag == "Exit")
         {
-            main.Win();
+            if (main.GetActiveSceneIndex() == 1) main.Win();
+            if (main.GetActiveSceneIndex() == 2)
+                if (collision.GetComponent<Finish>().pinguinAtHome) main.Win();
+        }
+        if (collision.tag == "Refrigerator")
+        {
+            inRefrigerator = true;
+            refrigerator = collision.gameObject;
+        }
+        if (collision.tag == "Bolt")
+        {
+            if (!fullInventory)
+            {
+                Destroy(collision.gameObject);
+                isBolt = true;
+                InventoryRefresh();
+            }
+        }
+        if (collision.tag == "Circle")
+        {
+            if (!fullInventory)
+            {
+                Destroy(collision.gameObject);
+                isCircle = true;
+                InventoryRefresh();
+            }
         }
     }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "PuddleOfMud")
@@ -324,14 +353,16 @@ public class Player : MonoBehaviour
         {
             inLeaves = false;
         }
+        if (collision.tag == "Refrigerator")
+        {
+            inRefrigerator = false;
+            refrigerator = null;
+        }
     }
 
-    IEnumerator Steps()
+    public void StepSounds()
     {
-        if (isGrounded && Input.GetAxis("Horizontal") != 0) stepSound.Play();
-        yield return new WaitForSeconds(speed/20);
-        if (isGo) StartCoroutine(Steps()); // Если идёт, но не повернулся //  && !isFlip
-        //if (isFlip) isFlip = false;
+        allAudio.stepsBool = true;
     }
 
     // Охранник, который говорит нам сколько у игрока морковок
@@ -465,5 +496,49 @@ public class Player : MonoBehaviour
             }
         
         }
-    }    
+
+        if (inRefrigerator)
+        {
+            /*Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, refrigeratorRadius);
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                if (colliders[i].tag == "Refrigerator")
+                {
+                    colliders[i].GetComponent<Refrigerator>().OpenCloseRefrigerator();
+                    break;
+                }
+            }*/
+            refrigerator.GetComponent<Refrigerator>().OpenCloseRefrigerator();
+            if (refrigerator.GetComponent<Refrigerator>().isActive == true) allAudio.refrigeratorOpenBool = true;
+            else allAudio.refrigeratorCloseBool = true;
+
+            if (refrigerator.GetComponentInChildren<CircleCollider2D>().enabled) refrigerator.GetComponentInChildren<CircleCollider2D>().enabled = false;
+            else refrigerator.GetComponentInChildren<CircleCollider2D>().enabled = true;
+        }
+    }
+
+    void InventoryRefresh()
+    {
+        fullInventory = true;
+        if (isBolt)
+        {
+            inventoryText.enabled = false;
+            inventoryImage.sprite = boltSprite;
+            inventoryImage.enabled = true;
+        }
+
+        if (isCircle)
+        {
+            inventoryText.enabled = false;
+            inventoryImage.sprite = circleSprite;
+            inventoryImage.enabled = true;
+        }
+    }
+
+    public void ClearInventory()
+    {
+        fullInventory = false;
+        inventoryImage.enabled = false;
+        inventoryText.enabled = true;
+    }
 }

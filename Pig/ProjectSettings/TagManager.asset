@@ -10,6 +10,10 @@ TagManager:
   - Leaves
   - Exit
   - Barrier
+  - Refrigerator
+  - Circle
+  - Bolt
+  - Telega
   layers:
   - Default
   - TransparentFX
